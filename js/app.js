@@ -52,6 +52,7 @@ class Player {
                 this.y < enemy.y + enemy.blockHeight/2 &&
                 this.y + this.blockHeight/2 > enemy.y) {
                 alert('Collision');
+                this.score -= 20;
                 this.reset();
             }
             
