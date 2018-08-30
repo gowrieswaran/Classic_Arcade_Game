@@ -2,13 +2,23 @@
 
 A Game Project to showcase one's OOP's skills in JS. 
 
+## How to run the game locally
+
+* Click on the link : https://github.com/gowrieswaran/Classic_Arcade_Game.git
+
+* Clone or Download (ZIP) the repository to your local machine.
+
+* Navigate to the folder and look for index.html.
+
+ * Double click index.html to load the game in the browser.
+
 ## Getting Started
 
-* Help the player to cross the road without being hit by the enemies. 
+* Help the player to cross the road without being hit by the enemies.
 * Once collided with the enemy, the position will be reset.
 * `` Once the player reaches the other end his/her score gets added by 100 points. ``
 
-# Instructions to Play
+## Instructions to Play
 
 ## Choose your Sprite 
 
