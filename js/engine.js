@@ -146,15 +146,12 @@ var Engine = (function(global) {
             
         }
         for(i=0;i<spriteImages.length;i++){
-            
-            // ctx.drawImage(Resources.get(spriteImages[i]), 505, i * 90);
             ctx.drawImage(Resources.get(spriteImages[i]), i * 100,-55);
-            // spriteImages[i].addEventListener('click',function(){
-            //     player.sprite = Resources.get(spriteImages[i]);
-            // });
-        
+            ctx.fillStyle = "rgb(8,128,128)";
+            ctx.font = "18px serif";
+            ctx.fillText("Press  Keys [1-5] to  choose your  player" , 160,120);
         }
-                renderEntities();
+        renderEntities();
     }
 
     /* This function is called by the render function and is called on each game
@@ -193,7 +190,8 @@ var Engine = (function(global) {
         'images/char-cat-girl.png',
         'images/char-horn-girl.png',
         'images/char-pink-girl.png',
-        'images/char-princess-girl.png'
+        'images/char-princess-girl.png',
+        'images/Star.png'
     ]);
     Resources.onReady(init);
 
@@ -202,4 +200,9 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+    let docBody = document.getElementsByTagName('body');
+    let scoreBoard = document.createElement('div');
+    scoreBoard.setAttribute('id','scoreboard');
+    docBody[0].appendChild(scoreBoard);
+    
 })(this);

@@ -1,5 +1,6 @@
 const BLOCK_HEIGHT = 83;
 const BLOCK_WIDTH = 101;
+let  win_count = 0;
 // Enemies our player must avoid
 class Enemy {
     constructor(x,y,speed) {
@@ -42,6 +43,7 @@ class Player {
         this.sprite = 'images/char-cat-girl.png';
         this.blockWidth = 101;
         this.blockHeight = 83;
+        this.score =0;
     }
     
     update () {
@@ -58,10 +60,11 @@ class Player {
             } 
             //check win
         if(this.y < 0) {
-            alert('You won the game!!');
+            
+            this.score += 100;
             this.reset();
-        }
-        }
+            }
+    }
     
     reset() {
         this.x = 200;
@@ -70,8 +73,10 @@ class Player {
     // Draw the enemy on the screen, required method for game
     render () {
         //draw player on x,y
-        //this.sprite.onClick = function(){ console.log('player is clicked');}
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        ctx.fillStyle = "white";
+        ctx.font = 'bold 20px serif';
+        ctx.fillText("Score: " + this.score, 5, 120);
     };
 
     handleInput(input) {
@@ -98,17 +103,40 @@ class Player {
                 break;
         }
     }
+
+    changeSprite(value){
+        switch(value){
+            case '1':
+            this.sprite = 'images/char-boy.png';
+            break;
+            case '2':
+            this.sprite = 'images/char-cat-girl.png';
+            break;
+            case '3':
+            this.sprite = 'images/char-horn-girl.png';
+            break;
+            case '4':
+            this.sprite = 'images/char-pink-girl.png';
+            break;
+            case '5':
+            this.sprite = 'images/char-princess-girl.png';
+            break;
+        }
+        
+    }
 }
+
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var player = new Player();
-var allEnemies = [];
-var bug1 = new Enemy(-101,1*BLOCK_HEIGHT,100 + Math.floor(Math.random() * 300));
-var bug2 = new Enemy(-101,2*BLOCK_HEIGHT,70 + Math.floor(Math.random() * 300));
-var bug3 = new Enemy(-101,3*BLOCK_HEIGHT,100 + Math.floor(Math.random() * 300));
+let player = new Player();
+let allEnemies = [];
+let bug1 = new Enemy(-101,1*BLOCK_HEIGHT,100 + Math.floor(Math.random() * 300));
+let bug2 = new Enemy(-101,2*BLOCK_HEIGHT,70 + Math.floor(Math.random() * 300));
+let bug3 = new Enemy(-101,3*BLOCK_HEIGHT,100 + Math.floor(Math.random() * 300));
 allEnemies.push(bug1,bug2,bug3);
 
 
@@ -124,4 +152,15 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+});
+
+document.addEventListener('keypress',function(e){
+    var spriteKeys = {
+        49: '1',
+        50: '2',
+        51: '3',
+        52: '4',
+        53: '5'
+    };
+    player.changeSprite(spriteKeys[e.keyCode]);
 });
