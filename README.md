@@ -24,6 +24,6 @@ A Game Project to showcase one's OOP's skills in JS.
   
 ## Live Demo
 
-
+https://gowrieswaran.github.io/Classic_Arcade_Game/
 
 #### `` Hope you like it! Happy playing !!!``
