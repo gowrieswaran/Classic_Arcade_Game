@@ -1,4 +1,4 @@
-# Classic Arcade Game
+# Classic_Arcade_Game
 
 A Game Project to showcase one's OOP's skills in JS. 
 
