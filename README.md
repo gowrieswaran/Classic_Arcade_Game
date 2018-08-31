@@ -20,6 +20,9 @@ A Game Project to showcase one's OOP's skills in JS.
 
 ## Instructions to Play
 
+![Screenshot of the game screen ](https://github.com/gowrieswaran/Classic_Arcade_Game/blob/master/arcade_game_screen.png)
+
+
 ## Choose your Sprite 
 
   * Press keys [1-5] to choose your respective player as shown on the screen.
